@@ -8,6 +8,8 @@ function ManagerPage() {
   const[hotelid,setHotelId]=useState("");
   const[rentPopup,setRentPopup]=useState(false);
   const[ratingPopup,setRatingPopup]=useState(false);
+  const[users,setUsers]=useState([])
+  const[reservation,setReservation]=useState([])
 
   const[data,setdata]=useState({
     id:"",
@@ -50,6 +52,16 @@ function ManagerPage() {
     axios.get("http://localhost:5000/api/hotels/getall").then(res=>{
       setHData(res.data.result)
       console.log(res.data.result)
+      }).then(res=>{
+        axios.get("http://localhost:5000/api/users").then(res2=>{
+            setUsers(res2.data)
+            console.log(res2.data)
+        })
+      }).then(res=>{
+        axios.get("http://localhost:5000/api/rooms").then(res=>{
+          setReservation(res.data)
+          console.log(res.data)
+        })
       })
     },[])
 
@@ -132,6 +144,44 @@ function ManagerPage() {
         <h3>After Pressing this button you can modify the rating of hotel by entering the Id.  </h3>
         <button className='update-button' onClick={()=>{setRatingPopup(true)}}>Update Rating</button>
         </div>}
+      </div>
+      <div className="details">
+        <div className="user-details">
+          <h1>Users Details</h1>
+          {users.map((user,index)=>(
+            <div key={index} className='hotel-list'>
+            <h1>{user.name}</h1>
+            <div style={{"display":"flex","justifyContent":"space-evenly"}}>
+            <div>
+                <p>Name:{user.name}</p>
+                <p>Email:{user.email}</p>
+                <p>Phone:{user.phone}</p>
+                <p>Address:{user.address}</p>
+            </div>
+            
+            </div>
+            
+        </div>
+          ))}
+        </div>
+        <div className="booking-details">
+        <h1>Reservation Details</h1>
+          {reservation.map((res,index)=>(
+            <div key={index} className='hotel-list'>
+            <h1>{res.hotelname}</h1>
+            <div style={{"display":"flex","justifyContent":"space-evenly"}}>
+            <div>
+                <p>Name:{res.username}</p>
+                <p>Hotel Id:{res.hotelid}</p>
+                <p>Email:{res.email}</p>
+                <p>Phone:{res.Phone}</p>
+            </div>
+            
+            </div>
+            
+        </div>
+          ))}
+        </div>
       </div>
     </div>
   )
