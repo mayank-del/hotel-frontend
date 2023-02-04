@@ -68,7 +68,7 @@ function ManagerPage() {
 
   return (
     <div style={{"color":"yellow"}} >
-        <h1>Welcome Sir !</h1>
+        <h1 className='mgr-heading'>Welcome Manager Sir</h1>
     <div className='chart-container'>
         <ResponsiveContainer width="45%"  aspect={3}> 
         <LineChart data={hdata} height={200} width={400} margin={{top:10,
@@ -167,14 +167,14 @@ function ManagerPage() {
         <div className="booking-details">
         <h1>Reservation Details</h1>
           {reservation.map((res,index)=>(
-            <div key={index} className='hotel-list'>
+            <div style={{"borderRadius":"10px"}} key={index} className='hotel-list'>
             <h1>{res.hotelname}</h1>
             <div style={{"display":"flex","justifyContent":"space-evenly"}}>
             <div>
                 <p>Name:{res.username}</p>
                 <p>Hotel Id:{res.hotelid}</p>
                 <p>Email:{res.email}</p>
-                <p>Phone:{res.Phone}</p>
+                <p>Phone:{res.phone}</p>
             </div>
             
             </div>
