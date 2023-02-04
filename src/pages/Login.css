@@ -1,0 +1,80 @@
+.login-main-container{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.manager-div{
+	position: relative;
+	z-index: 2;
+	width: 700px;
+	min-height: 85vh;
+    
+	background: #18180c;
+	border-radius: 10px;
+}
+.manager-div-2{
+	
+	width: 400px;
+	min-height: 55vh;
+    
+	background: #18180c;
+	border-radius: 10px;
+}
+.manager-div ::placeholder,.manager-div-2 ::placeholder{
+	color: yellow;
+}
+
+.signup-header{
+	margin-top: 10px;
+}
+.manager-div h2,.manager-div-2 h2{
+	padding-top:10px ;
+	color: yellow;
+	
+	
+}
+.names input,.address-container input,.user-contact input{
+	margin-top: 20px;
+    backdrop-filter: blur(16px) saturate(180%);
+    -webkit-backdrop-filter: blur(16px) saturate(180%);
+    background-color: rgba(17, 25, 40, 0.75);
+    border-radius: 10px;
+    width: 260px;
+    height: 40px;
+    color: yellow;
+    padding-left: 12px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.address-container input{
+	width: 390px;
+}
+/* ::-webkit-calendar-picker-indicator {
+	filter: invert(1);
+} */
+.signup-button{
+	width: 60%;
+	height: 40px;
+	cursor: pointer;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	background: yellow;
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+}
+.switch{
+	color: yellow;
+}
+.switch a{
+	margin-left:5px ;
+	color: aliceblue;
+}

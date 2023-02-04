@@ -1,0 +1,29 @@
+.hotel-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+    color: yellow;
+}
+.hotel-list-container{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.hotel-list{
+    margin-top: 100px;
+    background: #18180c;
+    box-shadow: 2px 2px 2px 1px rgba(103, 101, 101, 0.2);
+    width: 70%;
+    height: 40vh;
+}
+.book-button{
+    border-radius:10px ;
+    height: 30px;
+    width: 260px;
+    background: yellow;
+    color: black;
+    margin-top: 10px;
+    cursor: pointer;
+}
