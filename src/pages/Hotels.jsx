@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import "./Hotel.css"
+import swal from 'sweetalert'
 function Hotels() {
     const[hotelList,setHotelList]=useState([])
     const[hotelid,setHotelId]=useState("")
@@ -35,10 +36,12 @@ function Hotels() {
     }
     async function finalSubmission(){
         await axios.post("http://localhost:5000/api/rooms/book",{hotelid,hotelname,username,uid,phone,email,roomno})
-        .then(res=>{
+        .then(()=>{
             axios.post(`http://localhost:5000/api/hotels/updaterooms/${hotelid}`)
             } 
-        )
+        ).then(()=>{
+            swal("Successful!", "Booking Confirmed :)", "success");
+        })
     }
   return (
     <div className='hotel-container'>
